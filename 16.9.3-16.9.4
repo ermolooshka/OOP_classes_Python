@@ -1,0 +1,34 @@
+#16.9.3
+# В проекте «Дом питомца» добавим новую услугу — электронный кошелек.
+# Необходимо создать класс «Клиент», который будет содержать данные о клиентах и их финансовых операциях.
+# О клиенте известна следующая информация: имя, фамилия, город, баланс.
+# Далее сделайте вывод о клиентах в консоль в формате:
+# «Иван Петров. Москва. Баланс: 50 руб.»
+
+#16.9.4
+# Написать программу, которая позволит составить список гостей.
+# В класс «Клиент» добавьте метод, который будет возвращать информацию только об имени, фамилии и городе клиента.
+# Затем создайте список, в который будут добавлены все клиенты, и выведете его в консоль.
+
+class Clients:
+    def __init__(self, name,last_name, city, balance):
+        self.name = name
+        self.last_name = last_name
+        self.city = city
+        self.balance = balance
+    def __str__(self):
+        return f'Clients: {self.name} {self.last_name}. {self.city}.{" Баланс:"} {self.balance} {"руб."}'
+    def get_company(self):
+        return f'Clients: {self.name} {self.last_name}. {self.city}'
+
+people_1 = Clients('Иван','Петров','Москва',50)
+people_2 = Clients('Анна','Иванова','Самара',150)
+people_3 = Clients('Олег','Яшин','Омск',50)
+people_4 = Clients("Арсен","Магикян","Тбилиси",200)
+people_5 = Clients('Алла','Неизвестная','Тюмень',100)
+
+company_list=[people_1,people_2,people_3,people_4,people_5]
+
+for company in company_list:
+    print(company.get_company())
+print(people_1)
